@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.8.1'
+version = '0.8.2'
 
 f = open(os.path.join(os.path.dirname(__file__), 'docs', 'index.txt'))
 long_description = f.read().strip()
@@ -25,7 +25,7 @@ setup(name='virtualenv',
       ## Hacks to get the package data installed:
       packages=[''],
       package_dir={'': '.'},
-      package_data={'': ['support-files/*.egg']},
+      package_data={'': ['support-files/*-py%s.egg' % sys.version[:3]]},
       zip_safe=False,
       entry_points="""
       [console_scripts]
